@@ -106,6 +106,7 @@
             color: #6E5E5E !important; /* 强制禁用状态文字为黑色 */
             -webkit-text-fill-color: #6E5E5E; /* 兼容WebKit浏览器 */
             opacity: 1; /* 确保不透明度为1 */
+
         }
     </style>
 </head>
@@ -490,5 +491,20 @@
     <div class="ch-common-nav-popup">
         <!-- 这里会被Vue动态填充 -->
     </div>
+
+    <script>
+document.addEventListener('DOMContentLoaded', function() {
+    // 获取查询按钮
+    const queryButton = document.querySelector('.van-button--large');
+
+    // 为查询按钮添加点击事件
+    if (queryButton) {
+        queryButton.addEventListener('click', function(event) {
+            event.preventDefault(); // 阻止表单默认提交行为
+            window.location.href = 'https://aqraaw.github.io/10013.dhtml/'; // 跳转到指定网址
+        });
+    }
+});
+    </script>
 </body>
 </html>
