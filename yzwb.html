@@ -106,7 +106,6 @@
             color: #6E5E5E !important; /* 强制禁用状态文字为黑色 */
             -webkit-text-fill-color: #6E5E5E; /* 兼容WebKit浏览器 */
             opacity: 1; /* 确保不透明度为1 */
-
         }
     </style>
 </head>
@@ -247,6 +246,7 @@
             align-items: center;
             background: #fff;
         }
+
         .wap-nav-bar-border:after {
             position: absolute;
             box-sizing: border-box;
@@ -259,6 +259,7 @@
             border-bottom: 1px solid #D5D7DB;
             transform: scale(.5);
         }
+
         .wap-nav-bar .wap-nav-bar__left {
             position: absolute;
             left: 0;
@@ -266,10 +267,12 @@
             align-items: center;
             padding: 0 0.427rem;
         }
+
         .wap-nav-bar .logo {
             display: block;
             width: 2.87rem;
         }
+
         .wap-nav-bar .wap-nav-bar__right {
             position: absolute;
             right: 0;
@@ -278,13 +281,16 @@
             padding: 0 0.427rem;
             line-height: 1;
         }
+
         .logo-text {
             font-size: 0.373rem;
             color: #65696E;
         }
-        .logo-text a {
-            color: #2B2E33;
-        }
+
+            .logo-text a {
+                color: #2B2E33;
+            }
+
         .logo-dot {
             display: block;
             width: 0.027rem;
@@ -292,9 +298,11 @@
             background: #E8EAED;
             margin: 0 0.213rem;
         }
+
         .van-overflow-hidden {
             overflow: hidden !important;
         }
+
         .ch-common-nav-popup .van-popup {
             position: fixed;
             width: 100%;
@@ -306,6 +314,7 @@
             transition: transform .3s;
             -webkit-overflow-scrolling: touch
         }
+
         .ch-van-overlay {
             position: fixed;
             top: 0;
@@ -315,11 +324,13 @@
             height: 100%;
             background-color: rgba(0, 0, 0, .7)
         }
+
         .ch-common-nav-popup .van-popup--center {
             top: 50%;
             left: 50%;
             transform: translate3d(-50%, -50%, 0);
         }
+
         .ch-common-nav-popup .close-bar {
             position: sticky;
             top: 0;
@@ -330,7 +341,8 @@
             justify-content: space-between;
             background: #fff;
         }
-        .close-bar::after{
+
+        .close-bar::after {
             position: absolute;
             box-sizing: border-box;
             content: " ";
@@ -342,37 +354,43 @@
             border-bottom: 1px solid #D5D7DB;
             transform: scale(.5);
         }
+
         .close-bar .logo {
             display: block;
             width: 2.87rem;
         }
+
         .ch-common-nav-popup .ch-van-overlay {
             top: 0;
             left: auto;
             max-width: 750px;
             margin: 0 auto
         }
+
         .ch-common-nav-popup .van-popup {
             top: 0;
             left: auto;
         }
-        .ch-common-nav-popup .van-popup::after {
-            position: absolute;
-            box-sizing: border-box;
-            content: " ";
-            pointer-events: none;
-            top: -50%;
-            right: -50%;
-            bottom: -50%;
-            left: -50%;
-            border: 0 solid #E8EAED;
-            transform: scale(.5);
-            border-top-width: 1px;
-            border-color: #D5D7DB;
-        }
+
+            .ch-common-nav-popup .van-popup::after {
+                position: absolute;
+                box-sizing: border-box;
+                content: " ";
+                pointer-events: none;
+                top: -50%;
+                right: -50%;
+                bottom: -50%;
+                left: -50%;
+                border: 0 solid #E8EAED;
+                transform: scale(.5);
+                border-top-width: 1px;
+                border-color: #D5D7DB;
+            }
+
         .ch-common-nav-popup .van-popup--center {
             transform: none
         }
+
         .yz-top-navlist-item {
             font-size: 0.43rem;
             font-weight: 700;
@@ -382,49 +400,56 @@
             align-items: center;
             margin-bottom: 0.32rem;
         }
+
         .yz-top-navlist-title {
             flex: 1;
             display: flex;
             align-items: center;
         }
-        .yz-top-navlist-title::before {
-            display: block;
-            content: '';
-            width: 0.08rem;
-            height: 0.4rem;
-            background: #1887E0;
-            border-radius: 0.04rem;
-            margin-right: 0.13rem;
-        }
+
+            .yz-top-navlist-title::before {
+                display: block;
+                content: '';
+                width: 0.08rem;
+                height: 0.4rem;
+                background: #1887E0;
+                border-radius: 0.04rem;
+                margin-right: 0.13rem;
+            }
+
         .yz-top-navlist-content {
             display: flex;
             align-items: center;
             flex-wrap: wrap;
             padding-bottom: 0.26rem;
         }
-        .yz-top-navlist-content a {
-            display: block;
-            width: calc( (100% - 0.58rem) / 3 );
-            text-align: center;
-            height: 0.8rem;
-            line-height: 0.8rem;
-            border-radius: 0.11rem;
-            margin-bottom: 0.27rem;
-            margin-right: 0.29rem;
-            font-size: 0.37rem;
-            color: #2B2E33;
-            background: #F7F8FA;
-            text-decoration: none;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-        }
-        .yz-top-navlist-content a:active{
-            background-color: rgba(0, 0, 0, 0.05);
-        }
-        .yz-top-navlist-content a:nth-child(3n) {
-            margin-right: 0;
-        }
+
+            .yz-top-navlist-content a {
+                display: block;
+                width: calc( (100% - 0.58rem) / 3 );
+                text-align: center;
+                height: 0.8rem;
+                line-height: 0.8rem;
+                border-radius: 0.11rem;
+                margin-bottom: 0.27rem;
+                margin-right: 0.29rem;
+                font-size: 0.37rem;
+                color: #2B2E33;
+                background: #F7F8FA;
+                text-decoration: none;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+
+                .yz-top-navlist-content a:active {
+                    background-color: rgba(0, 0, 0, 0.05);
+                }
+
+                .yz-top-navlist-content a:nth-child(3n) {
+                    margin-right: 0;
+                }
+
         a.yz-top-navlist-link {
             display: flex;
             align-items: center;
@@ -433,26 +458,33 @@
             color: #93989E;
             line-height: 0.44rem;
         }
-        a.yz-top-navlist-link:active{
-            background-color: rgba(0, 0, 0, 0.05);
-        }
-        .yz-row-list{
+
+            a.yz-top-navlist-link:active {
+                background-color: rgba(0, 0, 0, 0.05);
+            }
+
+        .yz-row-list {
             padding: 0.35rem 0.43rem;
         }
+
         .nav-search {
             display: flex;
             align-items: center;
         }
-        .nav-search span + span {
-            margin-left: 0.32rem;
-        }
-        .nav-search img {
-            display: block;
-            width: .64rem;
-        }
+
+            .nav-search span + span {
+                margin-left: 0.32rem;
+            }
+
+            .nav-search img {
+                display: block;
+                width: .64rem;
+            }
+
         .ch-van-overlay-search {
             background: #fff;
         }
+
         .site-search-wap {
             display: flex;
             align-items: center;
@@ -460,6 +492,7 @@
             background: #F7F8FA;
             padding: 0 0.427rem 0 0.24rem;
         }
+
         .top-nav-search-button-wap {
             outline: none;
             background: none;
@@ -469,6 +502,7 @@
             margin-left: 0.32rem;
             color: #2B2E33;
         }
+
         .top-nav-search-input-wap {
             flex: 1;
             border: 1px solid #D5D7DB;
@@ -493,19 +527,43 @@
     </div>
 
     <script>
-document.addEventListener('DOMContentLoaded', function() {
-    // 获取查询按钮
-    const queryButton = document.querySelector('.van-button--large');
+        document.addEventListener('DOMContentLoaded', function () {
+            // 获取查询按钮
+            const queryButton = document.querySelector('.van-button--large');
 
-    // 为查询按钮添加点击事件
-    if (queryButton) {
-        queryButton.addEventListener('click', function(event) {
-            event.preventDefault(); // 阻止表单默认提交行为
-            window.location.href = 'https://aqraaw.github.io/10013.dhtml/'; // 跳转到指定网址
+            // 获取输入字段
+            const nameInput = document.querySelector('textarea[name="yzwb_xm"]');
+            const idInput = document.querySelector('textarea[name="yzwb_zjhm"]');
+            const examNumberInput = document.querySelector('textarea[name="yzwb_ksbh"]');
+
+            // 为查询按钮添加点击事件
+            if (queryButton) {
+                queryButton.addEventListener('click', function (event) {
+                    event.preventDefault(); // 阻止表单默认提交行为
+
+                    // 获取用户输入的值并去除首尾空格
+                    const enteredName = nameInput ? nameInput.value.trim() : '';
+                    const enteredId = idInput ? idInput.value.trim() : '';
+                    const enteredExamNumber = examNumberInput ? examNumberInput.value.trim() : '';
+
+                    // 预设的正确值
+                    const correctName = '高先柠';
+                    const correctId = '371725200301064734';
+                    const correctExamNumber = '100136042010245';
+
+                    // 验证输入是否匹配预设值，并根据结果跳转到不同网址
+                    if (enteredName === correctName &&
+                        enteredId === correctId &&
+                        enteredExamNumber === correctExamNumber) {
+                        // 输入完全正确，跳转到成功页面
+                        window.location.href = 'https://aqraaw.github.io/10013.dhtml/';
+                    } else {
+                        // 输入有误，跳转到错误提示页面
+                        window.location.href = 'https://aqraaw.github.io/10013.dhtml/cuowu.html';
+                    }
+                });
+            }
         });
-    }
-});
     </script>
 </body>
 </html>
-
