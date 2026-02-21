@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html data-dpr="1" style="font-size: 36.317px;">
+<head>
+    <!-- 页面标题 -->
+    <title>全国硕士研究生招生考试部分考生初试成绩查询系统</title>
+
+    <!-- 元数据：编码、兼容性、视口 -->
+    <meta content="text/html" charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+    <!-- DNS 预取，提升资源加载速度 -->
+    <link rel="dns-prefetch" href="https://axvert.chsi.com.cn">
+    <link rel="dns-prefetch" href="https://t1.chei.com.cn">
+    <link rel="dns-prefetch" href="https://t2.chei.com.cn">
+    <link rel="dns-prefetch" href="https://t3.chei.com.cn">
+    <link rel="dns-prefetch" href="https://t4.chei.com.cn">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="shortcut icon" type="image/x-icon" href="https://t2.chei.com.cn/yz/favicon.ico">
+    <link rel="stylesheet" href="https://t3.chei.com.cn/common/ch/iconfont.css">
+    <link rel="stylesheet" href="https://t1.chei.com.cn/yz/apply/assets2021/mobile/css/app.css?20220923">
+    <link rel="stylesheet" href="https://t1.chei.com.cn/yz/zbft/css/wap-common.css">
+
+    <!-- 自定义样式：页面布局、卡片样式、按钮、导航等 -->
+    <style>
+        /* 页面样式定义：包含查询卡片、头部、按钮、提示条等样式 */
+        .entry-wsdc {
+            height: auto;
+            padding: .587rem 0.587rem .587rem 2.187rem;
+        }
+
+            .entry-wsdc + .entry-wsdc {
+                margin-top: .533rem;
+            }
+
+        .entry-szd {
+            position: relative;
+            background: none;
+        }
+
+            .entry-szd .szd-icon {
+                position: absolute;
+                top: 50%;
+                left: 0.496rem;
+                line-height: 1;
+                margin-top: -0.6rem;
+                font-size: 1.2rem;
+                color: #FF5757;
+            }
+
+            .entry-szd .hot {
+                position: absolute;
+                top: 0;
+                right: 0;
+                line-height: 1;
+                padding: 0.133rem 0.213rem;
+                background: #FF5757;
+                box-shadow: 0rem 0.03rem 0.06rem 0rem rgba(255, 83, 83, 0.31);
+                border-radius: 0.06rem;
+                text-align: center;
+                font-size: 0.24rem;
+                font-family: PingFangSC-Semibold, PingFang SC;
+                font-weight: 400;
+                color: #fff;
+            }
+
+        .van-cell__title, .van-cell__value {
+            min-width: 0;
+        }
+
+        .yzwb-ksxx {
+            min-height: calc(100vh - 1.7067rem);
+            padding-bottom: 0;
+        }
+
+        .yz-header-banner {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 0 0.4267rem;
+            min-height: 4rem;
+            background: #1887e0 url('https://t3.chei.com.cn/yz/wap/assets/images/nav-banner-large.jpg') no-repeat;
+            background-size: cover;
+            color: #fff
+        }
+
+            .yz-header-banner h1 {
+                margin: 0;
+                line-height: 0.88rem;
+                font-size: 0.6667rem;
+                font-weight: 700;
+                text-shadow: 0 0.0267rem 0.0267rem rgba(0,0,0,.06);
+                text-align: center
+            }
+
+            .yz-header-banner .tip {
+                margin-top: 0.1067rem;
+                font-size: 0.3733rem;
+                line-height: 0.5867rem;
+                text-align: center;
+                color: rgba(255, 255, 255, 0.8);
+            }
+    </style>
+</head>
+
+<body style="font-size: 12px;">
+    <!-- 加载动画：页面初始加载时显示（当前隐藏） -->
+    <div id="appLoading" style="display: none;">
+        <div class="spin-loading">
+            <div class="spinner">
+                <div class="rect1"></div>
+                <div class="rect2"></div>
+                <div class="rect3"></div>
+                <div class="rect4"></div>
+                <div class="rect5"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Vue 应用根容器：整个页面主体内容 -->
+    <div id="app">
+        <div class="yzwb-ksxx">
+            <!-- 顶部导航栏 -->
+            <div class="wap-nav-bar wap-nav-bar-border">
+                <div class="wap-nav-bar__left">
+                    <a href="/wap/">
+                        <img src="https://t1.chei.com.cn/yz/wap/assets/images/index/logo.png" alt="研招网" class="logo">
+                    </a>
+                </div>
+                <div class="wap-nav-bar__right">
+                    <div class="nav-search">
+                        <span><img src="https://t1.chei.com.cn/common/images/wap-icon/nav-user.svg"></span>
+                        <span><img src="https://t1.chei.com.cn/common/images/wap-icon/nav-menu.svg"></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 页面主标题 -->
+            <div class="yzwb-header">2026年部分考生初试成绩查询</div>
+
+            <!-- 查询表单：隐藏字段与显示字段配合，实际输入由下方Vue组件控制 -->
+            <form action="/apply/cjcx/cjcx.do" method="post">
+                <input type="hidden" name="xm">
+                <input type="hidden" name="zjhm">
+                <input type="hidden" name="ksbh">
+                <input type="hidden" name="bkdwdm" value="10013">
+                <input type="hidden" name="checkcode">
+            </form>
+
+            <!-- 查询卡片：姓名、证件号、准考证号、报考单位输入区 -->
+            <div class="van-cell-group van-hairline--top-bottom van-panel">
+                <div class="van-cell van-hairline van-panel__header"></div>
+                <div class="van-panel__content">
+                    <!-- 姓名 -->
+                    <div class="van-cell van-hairline van-field">
+                        <div class="van-cell__title"><span>姓名</span></div>
+                        <div class="van-cell__value">
+                            <div class="van-field__body">
+                                <textarea disabled="disabled" rows="1" data-vv-as="姓名" placeholder="高先柠" name="yzwb_xm" class="van-field__control" style="height: 23px;"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 报名号 -->
+                    <div class="van-cell van-hairline van-field">
+                        <div class="van-cell__title"><span>报名号</span></div>
+                        <div class="van-cell__value">
+                            <div class="van-field__body">
+                                <textarea disabled="disabled" rows="1" data-vv-as="报名号" placeholder="131998843" name="yzwb_xm" class="van-field__control" style="height: 23px;"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 准考证号 -->
+                    <div class="van-cell van-hairline van-field">
+                        <div class="van-cell__title"><span>准考证号</span></div>
+                        <div class="van-cell__value">
+                            <div class="van-field__body">
+                                <textarea disabled="disabled" rows="1" data-vv-as="准考证号" placeholder="100136042010245" name="yzwb_xm" class="van-field__control" style="height: 23px;"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 总分 -->
+                    <div class="van-cell van-hairline van-field">
+                        <div class="van-cell__title"><span>总分</span></div>
+                        <div class="van-cell__value">
+                            <div class="van-field__body">
+                                <textarea disabled="disabled" rows="1" data-vv-as="总分" placeholder="320" name="yzwb_xm" class="van-field__control" style="height: 23px;"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 思想政治理论 -->
+                    <div class="van-cell van-hairline van-field">
+                        <div class="van-cell__title"><span>第一门</span></div>
+                        <div class="van-cell__value">
+                            <div class="van-field__body">
+                                <textarea disabled="disabled" rows="1" data-vv-as="第一门" placeholder="(101)思想政治理论：64" name="yzwb_xm" class="van-field__control" style="height: 23px;"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 英语（一） -->
+                    <div class="van-cell van-hairline van-field">
+                        <div class="van-cell__title"><span>第二门</span></div>
+                        <div class="van-cell__value">
+                            <div class="van-field__body">
+                                <textarea disabled="disabled" rows="1" data-vv-as="第二门" placeholder="(201)英语（一）：32" name="yzwb_xm" class="van-field__control" style="height: 23px;"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 数学（一） -->
+                    <div class="van-cell van-hairline van-field">
+                        <div class="van-cell__title"><span>第三门</span></div>
+                        <div class="van-cell__value">
+                            <div class="van-field__body">
+                                <textarea disabled="disabled" rows="1" data-vv-as="第三门" placeholder="(301)数学（一）：110" name="yzwb_xm" class="van-field__control" style="height: 23px;"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <!--通信原理-->
+                    <div class="van-cell van-hairline van-field">
+                        <div class="van-cell__title"><span>第四门</span></div>
+                        <div class="van-cell__value">
+                            <div class="van-field__body">
+                                <textarea disabled="disabled" rows="1" data-vv-as="第四门" placeholder="(801)通信原理：114" name="yzwb_xm" class="van-field__control" style="height: 23px;"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <!--备注-->
+                    <div class="van-cell van-hairline van-field">
+                        <div class="van-cell__title"><span>备注</span></div>
+                        <div class="van-cell__value">
+                            <div class="van-field__body">
+                                <textarea disabled="disabled" rows="1" data-vv-as="备注" placeholder="无" name="yzwb_xm" class="van-field__control" style="height: 23px;"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 底部说明和查询按钮 -->
+                    <div class="yzwb-bg van-cell-group van-hairline--top-bottom">
+                        <div class="van-cell van-hairline">
+                            <div class="van-cell__value van-cell__value--alone">
+                                <div class="van-cell-text yzwb-des">
+                                    <p>本系统所有数据均为招生单位提供，招生单位对查询结果负责解释。</p>
+                                    <p>若查询的成绩为负值，表示有缺考、违纪等情况。若仍对查询结果有疑问，请咨询相应的招生单位。</p>
+                                </div>
+                            </div>
+                        </div>
+
+ <!-- 额外的样式：导航栏、弹窗、搜索框等 -->
+ <style>
+     /* 导航栏样式 */
+     .wap-nav-bar {
+         position: relative;
+         z-index: 1;
+         height: 1.173rem;
+         display: flex;
+         align-items: center;
+         background: #fff;
+     }
+     .wap-nav-bar-border:after {
+         position: absolute;
+         box-sizing: border-box;
+         content: " ";
+         pointer-events: none;
+         top: -50%;
+         right: -50%;
+         bottom: -50%;
+         left: -50%;
+         border-bottom: 1px solid #D5D7DB;
+         transform: scale(.5);
+     }
+     .wap-nav-bar .wap-nav-bar__left {
+         position: absolute;
+         left: 0;
+         display: flex;
+         align-items: center;
+         padding: 0 0.427rem;
+     }
+     .wap-nav-bar .logo {
+         display: block;
+         width: 2.87rem;
+     }
+     .wap-nav-bar .wap-nav-bar__right {
+         position: absolute;
+         right: 0;
+         display: flex;
+         align-items: center;
+         padding: 0 0.427rem;
+         line-height: 1;
+     }
+     .logo-text {
+         font-size: 0.373rem;
+         color: #65696E;
+     }
+     .logo-text a {
+         color: #2B2E33;
+     }
+     .logo-dot {
+         display: block;
+         width: 0.027rem;
+         height: 0.533rem;
+         background: #E8EAED;
+         margin: 0 0.213rem;
+     }
+     .van-overflow-hidden {
+         overflow: hidden !important;
+     }
+     .ch-common-nav-popup .van-popup {
+         position: fixed;
+         width: 100%;
+         max-width: 750px;
+         margin: 0 auto;
+         max-height: 100%;
+         overflow-y: auto;
+         background-color: #fff;
+         transition: transform .3s;
+         -webkit-overflow-scrolling: touch
+     }
+     .ch-van-overlay {
+         position: fixed;
+         top: 0;
+         left: 0;
+         z-index: 1;
+         width: 100%;
+         height: 100%;
+         background-color: rgba(0, 0, 0, .7)
+     }
+     .ch-common-nav-popup .van-popup--center {
+         top: 50%;
+         left: 50%;
+         transform: translate3d(-50%, -50%, 0);
+     }
+     .ch-common-nav-popup .close-bar {
+         position: sticky;
+         top: 0;
+         height: 1.173rem;
+         padding: 0 .427rem;
+         display: flex;
+         align-items: center;
+         justify-content: space-between;
+         background: #fff;
+     }
+     .close-bar::after{
+         position: absolute;
+         box-sizing: border-box;
+         content: " ";
+         pointer-events: none;
+         top: -50%;
+         right: -50%;
+         bottom: -50%;
+         left: -50%;
+         border-bottom: 1px solid #D5D7DB;
+         transform: scale(.5);
+     }
+     .close-bar .logo {
+         display: block;
+         width: 2.87rem;
+     }
+     .ch-common-nav-popup .ch-van-overlay {
+         top: 0;
+         left: auto;
+         max-width: 750px;
+         margin: 0 auto
+     }
+     .ch-common-nav-popup .van-popup {
+         top: 0;
+         left: auto;
+     }
+     .ch-common-nav-popup .van-popup::after {
+         position: absolute;
+         box-sizing: border-box;
+         content: " ";
+         pointer-events: none;
+         top: -50%;
+         right: -50%;
+         bottom: -50%;
+         left: -50%;
+         border: 0 solid #E8EAED;
+         transform: scale(.5);
+         border-top-width: 1px;
+         border-color: #D5D7DB;
+     }
+     .ch-common-nav-popup .van-popup--center {
+         transform: none
+     }
+     .yz-top-navlist-item {
+         font-size: 0.43rem;
+         font-weight: 700;
+         color: #2B2E33;
+         line-height: 0.64rem;
+         display: flex;
+         align-items: center;
+         margin-bottom: 0.32rem;
+     }
+     .yz-top-navlist-title {
+         flex: 1;
+         display: flex;
+         align-items: center;
+     }
+     .yz-top-navlist-title::before {
+         display: block;
+         content: '';
+         width: 0.08rem;
+         height: 0.4rem;
+         background: #1887E0;
+         border-radius: 0.04rem;
+         margin-right: 0.13rem;
+     }
+     .yz-top-navlist-content {
+         display: flex;
+         align-items: center;
+         flex-wrap: wrap;
+         padding-bottom: 0.26rem;
+     }
+     .yz-top-navlist-content a {
+         display: block;
+         width: calc( (100% - 0.58rem) / 3 );
+         text-align: center;
+         height: 0.8rem;
+         line-height: 0.8rem;
+         border-radius: 0.11rem;
+         margin-bottom: 0.27rem;
+         margin-right: 0.29rem;
+         font-size: 0.37rem;
+         color: #2B2E33;
+         background: #F7F8FA;
+         text-decoration: none;
+         overflow: hidden;
+         text-overflow: ellipsis;
+         white-space: nowrap;
+     }
+     .yz-top-navlist-content a:active{
+         background-color: rgba(0, 0, 0, 0.05);
+     }
+     .yz-top-navlist-content a:nth-child(3n) {
+         margin-right: 0;
+     }
+     a.yz-top-navlist-link {
+         display: flex;
+         align-items: center;
+         font-size: 0.32rem;
+         font-weight: 400;
+         color: #93989E;
+         line-height: 0.44rem;
+     }
+     a.yz-top-navlist-link:active{
+         background-color: rgba(0, 0, 0, 0.05);
+     }
+     .yz-row-list{
+         padding: 0.35rem 0.43rem;
+     }
+     .nav-search {
+         display: flex;
+         align-items: center;
+     }
+     .nav-search span + span {
+         margin-left: 0.32rem;
+     }
+     .nav-search img {
+         display: block;
+         width: .64rem;
+     }
+     .ch-van-overlay-search {
+         background: #fff;
+     }
+     .site-search-wap {
+         display: flex;
+         align-items: center;
+         height: 1.173rem;
+         background: #F7F8FA;
+         padding: 0 0.427rem 0 0.24rem;
+     }
+     .top-nav-search-button-wap {
+         outline: none;
+         background: none;
+         border: none;
+         font-size: 0.373rem;
+         padding: 0;
+         margin-left: 0.32rem;
+         color: #2B2E33;
+     }
+     .top-nav-search-input-wap {
+         flex: 1;
+         border: 1px solid #D5D7DB;
+         height: 0.78rem;
+         background: #FFF url("https://t2.chei.com.cn/common/images/icon-search-wap.svg") left 0.21rem center no-repeat;
+         background-size: auto 0.533rem;
+         border-radius: 0.11rem;
+         outline: none;
+         padding: 0 0.21rem 0 0.88rem;
+         box-sizing: border-box;
+     }
+ </style>
+
+    <!-- Vue 模板：导航栏组件模板（未渲染，但保留） -->
+    <template id="nav-bar-template">
+        <!-- 内容省略，为Vue组件模板定义，实际页面中未直接使用 -->
+    </template>
+
+    <!-- 弹窗容器：用于显示导航菜单和搜索弹窗（当前为空） -->
+    <div class="ch-common-nav-popup">
+        <!-- 这里会被Vue动态填充 -->
+    </div>
+</body>
+</html>
