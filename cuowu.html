@@ -1,0 +1,543 @@
+<html data-dpr="1" style="font-size: 36.317px;">
+<head>
+    <!-- ========== 文档元信息 ========== -->
+    <!-- 页面标题：全国硕士研究生招生考试部分考生初试成绩查询系统 -->
+    <title>全国硕士研究生招生考试部分考生初试成绩查询系统</title>
+    <!-- 字符编码与浏览器兼容性设置 -->
+    <meta content="text/html" charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    
+    <!-- DNS预获取：加速第三方域名解析 -->
+    <link rel="dns-prefetch" href="https://axvert.chsi.com.cn">
+    <link rel="dns-prefetch" href="https://t1.chei.com.cn">
+    <link rel="dns-prefetch" href="https://t2.chei.com.cn">
+    <link rel="dns-prefetch" href="https://t3.chei.com.cn">
+    <link rel="dns-prefetch" href="https://t4.chei.com.cn">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <!-- 网站图标 -->
+    <link rel="shortcut icon" type="image/x-icon" href="https://t2.chei.com.cn/yz/favicon.ico">
+    
+    <!-- ========== 外部样式资源 ========== -->
+    <!-- 字体图标库 -->
+    <link rel="stylesheet" href="https://t3.chei.com.cn/common/ch/iconfont.css">
+    <!-- 移动端核心应用样式 -->
+    <link rel="stylesheet" href="https://t1.chei.com.cn/yz/apply/assets2021/mobile/css/app.css?20220923">
+    <!-- 通用移动端样式 -->
+    <link rel="stylesheet" href="https://t1.chei.com.cn/yz/zbft/css/wap-common.css">
+    
+    <!-- ========== 页面内联样式：特定组件微调 ========== -->
+    <style>
+        /* 成绩查询入口卡片样式：增加左侧内边距，留出图标位置 */
+        .entry-wsdc {
+            height: auto;
+            padding: .587rem 0.587rem .587rem 2.187rem;
+        }
+        .entry-wsdc + .entry-wsdc {
+            margin-top: .533rem;   /* 相邻卡片间距 */
+        }
+        /* 省招办查询入口样式：相对定位，用于放置绝对定位的图标和“热”标 */
+        .entry-szd {
+            position: relative;
+            background: none;
+        }
+        .entry-szd .szd-icon {
+            position: absolute;
+            top: 50%;
+            left: 0.496rem;
+            line-height: 1;
+            margin-top: -0.6rem;      /* 垂直居中 */
+            font-size: 1.2rem;
+            color: #FF5757;
+        }
+        .entry-szd .hot {
+            position: absolute;
+            top: 0;
+            right: 0;
+            line-height: 1;
+            padding: 0.133rem 0.213rem;
+            background: #FF5757;
+            box-shadow: 0rem 0.03rem 0.06rem 0rem rgba(255, 83, 83, 0.31);
+            border-radius: 0.06rem;
+            font-size: 0.24rem;
+            font-family: PingFangSC-Semibold, PingFang SC;
+            font-weight: 400;
+            color: #fff;
+        }
+        /* 单元格标题与值最小宽度归零，避免溢出 */
+        .van-cell__title, .van-cell__value {
+            min-width: 0;
+        }
+        /* 研招网考生信息区域最小高度占满视口，底部无内边距 */
+        .yzwb-ksxx {
+            min-height: calc(100vh - 1.7067rem);
+            padding-bottom: 0;
+        }
+
+        /* 页眉横幅：渐变蓝底 + 背景图，居中显示标题和提示 */
+        .yz-header-banner {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 0 0.4267rem;
+            min-height: 4rem;
+            background: #1887e0 url('https://t3.chei.com.cn/yz/wap/assets/images/nav-banner-large.jpg') no-repeat;
+            background-size: cover;
+            color: #fff
+        }
+
+        .yz-header-banner h1 {
+            margin: 0;
+            line-height: 0.88rem;
+            font-size: 0.6667rem;
+            font-weight: 700;
+            text-shadow: 0 0.0267rem 0.0267rem rgba(0,0,0,.06);
+            text-align: center
+        }
+
+        .yz-header-banner .tip {
+            margin-top: 0.1067rem;
+            font-size: 0.3733rem;
+            line-height: 0.5867rem;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.8);
+        }
+    </style>
+</head>
+
+<body style="font-size: 12px;">
+    <!-- ========== 应用加载动画（初始隐藏） ========== -->
+    <div id="appLoading" style="display: none;">
+        <div class="spin-loading">
+            <div class="spinner">
+                <div class="rect1"></div>
+                <div class="rect2"></div>
+                <div class="rect3"></div>
+                <div class="rect4"></div>
+                <div class="rect5"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== Vue应用挂载点：主页面内容 ========== -->
+    <div id="app">
+        <div class="yzwb-ksxx">
+            <!-- 导航栏组件 -->
+            <div class="wap-nav-bar wap-nav-bar-border">
+                <div class="wap-nav-bar__left">
+                    <a href="/wap/">
+                        <img src="https://t1.chei.com.cn/yz/wap/assets/images/index/logo.png" alt="研招网" class="logo">
+                    </a>
+                    <!-- 二级标题插槽（当前为空） -->
+                    <!---->
+                </div>
+                <div class="wap-nav-bar__right">
+                    <div class="nav-search">
+                        <!-- 客服图标（隐藏） -->
+                        <!---->
+                        <!-- 用户中心图标 -->
+                        <span><img src="https://t1.chei.com.cn/common/images/wap-icon/nav-user.svg"></span>
+                        <!-- 搜索图标 -->
+                        <span><img src="https://t2.chei.com.cn/common/images/icon-search-wap.svg"></span>
+                        <!-- 菜单图标 -->
+                        <span><img src="https://t1.chei.com.cn/common/images/wap-icon/nav-menu.svg"> </span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 页面主标题：2026年部分考生初试成绩查询 -->
+            <div class="yzwb-header">2026年部分考生初试成绩查询</div>
+
+            <!-- 无结果提示区域 -->
+            <div class="yzwb-alert">
+                <i class="yzwb-alert-icon yzwb-warn van-icon van-icon-warn"><!----></i>
+                <div class="yzwb-alert-msg">无查询结果</div>
+                <div class="yzwb-alert-des">请检查你报考的招生单位是否已开通初试成绩查询功能</div>
+            </div>
+
+            <!-- 底部操作栏：返回按钮 -->
+            <div class="yzwb-bg van-cell-group van-hairline--top-bottom">
+                <div class="van-cell van-hairline">
+                    <!----><!---->
+                    <div class="van-cell__value van-cell__value--alone">
+                        <a class="van-button van-button--primary van-button--large" href="https://aqraaw.github.io/10013.dhtml/yzwb.html" target="_blank">
+                            <!---->
+                            <span class="van-button__text">返回</span>
+                        </a>
+                    </div>
+                    <!---->
+                </div>
+            </div>
+        </div>
+
+        <!-- 页脚：版权信息 -->
+        <div class="wap-footer">
+            <div class="wap-footer-second" style="line-height: 0.5333rem; padding: 0.32rem; text-align: center;">
+                主办单位：<a href="https://chesicc.chsi.com.cn/">教育部学生服务与素质发展中心</a> <br>
+                Copyright © 2003-<span>2026</span> <a href="https://www.chsi.com.cn/">学信网</a> All Rights Reserved
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== 页面额外内联样式：导航栏、菜单、搜索弹出层等详细样式 ========== -->
+    <style>
+        /* 顶部导航条基本样式 */
+        .wap-nav-bar {
+            position: relative;
+            z-index: 1;
+            height: 1.173rem;
+            display: flex;
+            align-items: center;
+            background: #fff;
+        }
+        /* 下边框模拟（1px细线效果） */
+        .wap-nav-bar-border:after {
+            position: absolute;
+            box-sizing: border-box;
+            content: " ";
+            pointer-events: none;
+            top: -50%;
+            right: -50%;
+            bottom: -50%;
+            left: -50%;
+            border-bottom: 1px solid #D5D7DB;
+            transform: scale(.5);
+        }
+        /* 左侧区域：绝对定位 */
+        .wap-nav-bar .wap-nav-bar__left {
+            position: absolute;
+            left: 0;
+            display: flex;
+            align-items: center;
+            padding: 0 0.427rem;
+        }
+        .wap-nav-bar .logo {
+            display: block;
+            width: 2.87rem;
+        }
+        /* 右侧区域：绝对定位 */
+        .wap-nav-bar .wap-nav-bar__right {
+            position: absolute;
+            right: 0;
+            display: flex;
+            align-items: center;
+            padding: 0 0.427rem;
+            line-height: 1;
+        }
+        .logo-text {
+            font-size: 0.373rem;
+            color: #65696E;
+        }
+        .logo-text a {
+            color: #2B2E33;
+        }
+        /* 标题之间的分隔点 */
+        .logo-dot {
+            display: block;
+            width: 0.027rem;
+            height: 0.533rem;
+            background: #E8EAED;
+            margin: 0 0.213rem;
+        }
+        /* 通用溢出隐藏 */
+        .van-overflow-hidden {
+            overflow: hidden !important;
+        }
+        /* 导航弹出层容器：限制最大宽度750px，居中 */
+        .ch-common-nav-popup .van-popup {
+            position: fixed;
+            width: 100%;
+            max-width: 750px;
+            margin: 0 auto;
+            max-height: 100%;
+            overflow-y: auto;
+            background-color: #fff;
+            transition: transform .3s;
+            -webkit-overflow-scrolling: touch
+        }
+        /* 遮罩层 */
+        .ch-van-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, .7)
+        }
+        .ch-common-nav-popup .van-popup--center {
+            top: 50%;
+            left: 50%;
+            transform: translate3d(-50%, -50%, 0);
+        }
+        /* 弹出层顶部关闭栏 */
+        .ch-common-nav-popup .close-bar {
+            position: sticky;
+            top: 0;
+            height: 1.173rem;
+            padding: 0 .427rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #fff;
+        }
+        .close-bar::after{
+            position: absolute;
+            box-sizing: border-box;
+            content: " ";
+            pointer-events: none;
+            top: -50%;
+            right: -50%;
+            bottom: -50%;
+            left: -50%;
+            border-bottom: 1px solid #D5D7DB;
+            transform: scale(.5);
+        }
+        .close-bar .logo {
+            display: block;
+            width: 2.87rem;
+        }
+        /* 遮罩与弹出层配合 */
+        .ch-common-nav-popup .ch-van-overlay {
+            top: 0;
+            left: auto;
+            max-width: 750px;
+            margin: 0 auto
+        }
+        .ch-common-nav-popup .van-popup {
+            top: 0;
+            left: auto;
+        }
+        .ch-common-nav-popup .van-popup::after {
+            position: absolute;
+            box-sizing: border-box;
+            content: " ";
+            pointer-events: none;
+            top: -50%;
+            right: -50%;
+            bottom: -50%;
+            left: -50%;
+            border: 0 solid #E8EAED;
+            transform: scale(.5);
+            border-top-width: 1px;
+            border-color: #D5D7DB;
+        }
+        .ch-common-nav-popup .van-popup--center {
+            transform: none
+        }
+        /* 导航菜单每一项的标题样式 */
+        .yz-top-navlist-item {
+            font-size: 0.43rem;
+            font-weight: 700;
+            color: #2B2E33;
+            line-height: 0.64rem;
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.32rem;
+        }
+        .yz-top-navlist-title {
+            flex: 1;
+            display: flex;
+            align-items: center;
+        }
+        /* 标题左侧蓝色竖条 */
+        .yz-top-navlist-title::before {
+            display: block;
+            content: '';
+            width: 0.08rem;
+            height: 0.4rem;
+            background: #1887E0;
+            border-radius: 0.04rem;
+            margin-right: 0.13rem;
+        }
+        /* 二级导航内容区域（三列网格） */
+        .yz-top-navlist-content {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            padding-bottom: 0.26rem;
+        }
+        .yz-top-navlist-content a {
+            display: block;
+            width: calc( (100% - 0.58rem) / 3 );
+            text-align: center;
+            height: 0.8rem;
+            line-height: 0.8rem;
+            border-radius: 0.11rem;
+            margin-bottom: 0.27rem;
+            margin-right: 0.29rem;
+            font-size: 0.37rem;
+            color: #2B2E33;
+            background: #F7F8FA;
+            text-decoration: none;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        .yz-top-navlist-content a:active{
+            background-color: rgba(0, 0, 0, 0.05);
+        }
+        /* 第三列去除右边距 */
+        .yz-top-navlist-content a:nth-child(3n) {
+            margin-right: 0;
+        }
+        /* 带“更多”箭头的链接样式 */
+        a.yz-top-navlist-link {
+            display: flex;
+            align-items: center;
+            font-size: 0.32rem;
+            font-weight: 400;
+            color: #93989E;
+            line-height: 0.44rem;
+        }
+        a.yz-top-navlist-link:active{
+            background-color: rgba(0, 0, 0, 0.05);
+        }
+        /* 菜单列表内边距 */
+        .yz-row-list{
+            padding: 0.35rem 0.43rem;
+        }
+        /* 导航搜索图标组 */
+        .nav-search {
+            display: flex;
+            align-items: center;
+        }
+        .nav-search span + span {
+            margin-left: 0.32rem;
+        }
+        .nav-search img {
+            display: block;
+            width: .64rem;
+        }
+        /* 搜索遮罩白色背景 */
+        .ch-van-overlay-search {
+            background: #fff;
+        }
+        /* 站点搜索条 */
+        .site-search-wap {
+            display: flex;
+            align-items: center;
+            height: 1.173rem;
+            background: #F7F8FA;
+            padding: 0 0.427rem 0 0.24rem;
+        }
+        .top-nav-search-button-wap {
+            outline: none;
+            background: none;
+            border: none;
+            font-size: 0.373rem;
+            padding: 0;
+            margin-left: 0.32rem;
+            color: #2B2E33;
+        }
+        /* 搜索输入框，带放大镜背景图 */
+        .top-nav-search-input-wap {
+            flex: 1;
+            border: 1px solid #D5D7DB;
+            height: 0.78rem;
+            background: #FFF url("https://t2.chei.com.cn/common/images/icon-search-wap.svg") left 0.21rem center no-repeat;
+            background-size: auto 0.533rem;
+            border-radius: 0.11rem;
+            outline: none;
+            padding: 0 0.21rem 0 0.88rem;
+            box-sizing: border-box;
+        }
+    </style>
+
+    <!-- ========== Vue模板：导航栏组件定义 ========== -->
+    <template id="nav-bar-template">
+        <div :class="['wap-nav-bar', border ? 'wap-nav-bar-border' : '']" v-if="!hidebar">
+            <!-- 左侧区域：logo 和可选的二级标题 -->
+            <div class="wap-nav-bar__left">
+                <a href="/wap/">
+                    <img class="logo" src="https://t1.chei.com.cn/yz/wap/assets/images/index/logo.png" alt="研招网">
+                </a>
+                <template v-if="secondTitleHtml">
+                    <span class="logo-dot"></span>
+                    <span class="logo-text" v-html="secondTitleHtml"></span>
+                </template>
+            </div>
+            <!-- 右侧区域：客服、用户、搜索、菜单图标插槽 -->
+            <div class="wap-nav-bar__right">
+                <div class="nav-search">
+                    <!-- 客服图标（可插槽替换） -->
+                    <span v-if="showKf" @click="location.assign(kfUrl)">
+                        <slot name="kf-icon">
+                            <img src="https://t1.chei.com.cn/common/images/wap-icon/nav-kf.svg">
+                        </slot>
+                    </span>
+                    <!-- 用户图标 -->
+                    <span v-if="showUser" @click="location.assign(userUrl)">
+                        <slot name="user-icon">
+                            <img src="https://t1.chei.com.cn/common/images/wap-icon/nav-user.svg">
+                        </slot>
+                    </span>
+                    <!-- 搜索图标，点击显示搜索弹出层 -->
+                    <span @click="showSearch = true;">
+                        <slot name="search-icon">
+                            <img src="https://t2.chei.com.cn/common/images/icon-search-wap.svg">
+                        </slot>
+                    </span>
+                    <!-- 菜单图标，点击显示导航菜单弹出层 -->
+                    <span @click="showNav = true;">
+                        <slot name="nav-icon">
+                            <img src="https://t1.chei.com.cn/common/images/wap-icon/nav-menu.svg">
+                        </slot>
+                        <!-- 弹出层容器：菜单和搜索 -->
+                        <div ref="yzpopup" class="ch-common-nav-popup">
+                            <!-- 导航菜单弹出层 -->
+                            <template v-if="showNav">
+                                <div class="ch-van-overlay" @click="showNav = false;" style="z-index: 2001;"></div>
+                                <div class="van-popup van-popup--center" style="z-index: 2002;">
+                                    <div class="close-bar">
+                                        <a href="/wap/"><img src="https://t1.chei.com.cn/yz/wap/assets/images/index/logo.png" alt="研招网" class="logo"></a>
+                                        <img src="https://t1.chei.com.cn/common/images/wap-icon/nav-close.svg" @click="showNav = false;" style="width: .64rem;display: block">
+                                    </div>
+                                    <div class="yz-row-list">
+                                        <!-- 动态渲染导航列表 -->
+                                        <div class="van-row" v-for="nav in navList">
+                                            <div class="yz-top-navlist-item" v-if="!nav.href">
+                                                <span class="yz-top-navlist-title">{{nav.name}}</span>
+                                            </div>
+                                            <div class="yz-top-navlist-item" v-else="">
+                                                <span class="yz-top-navlist-title">{{nav.name}}</span>
+                                                <a class="yz-top-navlist-link" :href="isWap ? nav.wapHref : nav.href" :target="isWap ? '' : '_blank'" @mousedown="gaTrackerOutboundLink({ eventCategory: 'wap-二级导航', eventAction: 'click', eventLabel: nav.name })">
+                                                    <img src="https://t1.chei.com.cn/common/images/wap-icon/nav-next.svg" style="width: .4rem;display: block">
+                                                </a>
+                                            </div>
+                                            <!-- 子项网格 -->
+                                            <div class="yz-top-navlist-content" v-if="nav.child &amp;&amp; nav.child.length>0">
+                                                <a v-for="item in nav.child" :href="isWap ? item.wapHref : item.href" :target="isWap ? '' : '_blank'" @mousedown="gaTrackerOutboundLink({ eventCategory: 'wap-二级导航', eventAction: 'click', eventLabel: item.name })">{{ item.name }}</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </template>
+                            <!-- 搜索弹出层 -->
+                            <template v-if="showSearch">
+                                <div class="ch-van-overlay ch-van-overlay-search" style="z-index: 2001"></div>
+                                <div class="van-popup van-popup--center" style="z-index: 2002">
+                                    <form @submit.prevent="searchSubmit" ref="site-search-wap" class="site-search-wap" action="https://cn.bing.com/search" method="get">
+                                        <img @click="showSearch=false" src="https://t1.chei.com.cn/common/images/icon-back.svg" style="width: .533rem;display: block;margin-right: 0.24rem;">
+                                        <!-- 真实查询参数：拼接 site:yz.chsi.com.cn 限定站内搜索 -->
+                                        <input type="hidden" class="realQuery" name="q" :value="searchValue + ' site:yz.chsi.com.cn'">
+                                        <input placeholder="" type="text" ref="seachInput" name="query" autocomplete="off" class="top-nav-search-input-wap" v-model.trim="searchValue" maxlength="100">
+                                        <button type="submit" class="top-nav-search-button-wap">搜索</button>
+                                    </form>
+                                </div>
+                            </template>
+                        </div>
+                    </span>
+                </div>
+                <!-- 默认插槽 -->
+                <slot></slot>
+            </div>
+        </div>
+    </template>
+
+    <!-- ========== 导航弹出层实例（空，由Vue动态渲染） ========== -->
+    <div class="ch-common-nav-popup"><!----> <!----></div>
+
+</body>
+</html>
