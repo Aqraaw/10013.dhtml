@@ -7,7 +7,7 @@
     <meta content="text/html" charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    
+
     <!-- DNS预获取：加速第三方域名解析 -->
     <link rel="dns-prefetch" href="https://axvert.chsi.com.cn">
     <link rel="dns-prefetch" href="https://t1.chei.com.cn">
@@ -17,7 +17,7 @@
     <link rel="dns-prefetch" href="https://www.google-analytics.com">
     <!-- 网站图标 -->
     <link rel="shortcut icon" type="image/x-icon" href="https://t2.chei.com.cn/yz/favicon.ico">
-    
+
     <!-- ========== 外部样式资源 ========== -->
     <!-- 字体图标库 -->
     <link rel="stylesheet" href="https://t3.chei.com.cn/common/ch/iconfont.css">
@@ -25,7 +25,7 @@
     <link rel="stylesheet" href="https://t1.chei.com.cn/yz/apply/assets2021/mobile/css/app.css?20220923">
     <!-- 通用移动端样式 -->
     <link rel="stylesheet" href="https://t1.chei.com.cn/yz/zbft/css/wap-common.css">
-    
+
     <!-- ========== 页面内联样式：特定组件微调 ========== -->
     <style>
         /* 成绩查询入口卡片样式：增加左侧内边距，留出图标位置 */
@@ -33,37 +33,40 @@
             height: auto;
             padding: .587rem 0.587rem .587rem 2.187rem;
         }
-        .entry-wsdc + .entry-wsdc {
-            margin-top: .533rem;   /* 相邻卡片间距 */
-        }
+
+            .entry-wsdc + .entry-wsdc {
+                margin-top: .533rem; /* 相邻卡片间距 */
+            }
         /* 省招办查询入口样式：相对定位，用于放置绝对定位的图标和“热”标 */
         .entry-szd {
             position: relative;
             background: none;
         }
-        .entry-szd .szd-icon {
-            position: absolute;
-            top: 50%;
-            left: 0.496rem;
-            line-height: 1;
-            margin-top: -0.6rem;      /* 垂直居中 */
-            font-size: 1.2rem;
-            color: #FF5757;
-        }
-        .entry-szd .hot {
-            position: absolute;
-            top: 0;
-            right: 0;
-            line-height: 1;
-            padding: 0.133rem 0.213rem;
-            background: #FF5757;
-            box-shadow: 0rem 0.03rem 0.06rem 0rem rgba(255, 83, 83, 0.31);
-            border-radius: 0.06rem;
-            font-size: 0.24rem;
-            font-family: PingFangSC-Semibold, PingFang SC;
-            font-weight: 400;
-            color: #fff;
-        }
+
+            .entry-szd .szd-icon {
+                position: absolute;
+                top: 50%;
+                left: 0.496rem;
+                line-height: 1;
+                margin-top: -0.6rem; /* 垂直居中 */
+                font-size: 1.2rem;
+                color: #FF5757;
+            }
+
+            .entry-szd .hot {
+                position: absolute;
+                top: 0;
+                right: 0;
+                line-height: 1;
+                padding: 0.133rem 0.213rem;
+                background: #FF5757;
+                box-shadow: 0rem 0.03rem 0.06rem 0rem rgba(255, 83, 83, 0.31);
+                border-radius: 0.06rem;
+                font-size: 0.24rem;
+                font-family: PingFangSC-Semibold, PingFang SC;
+                font-weight: 400;
+                color: #fff;
+            }
         /* 单元格标题与值最小宽度归零，避免溢出 */
         .van-cell__title, .van-cell__value {
             min-width: 0;
@@ -87,22 +90,22 @@
             color: #fff
         }
 
-        .yz-header-banner h1 {
-            margin: 0;
-            line-height: 0.88rem;
-            font-size: 0.6667rem;
-            font-weight: 700;
-            text-shadow: 0 0.0267rem 0.0267rem rgba(0,0,0,.06);
-            text-align: center
-        }
+            .yz-header-banner h1 {
+                margin: 0;
+                line-height: 0.88rem;
+                font-size: 0.6667rem;
+                font-weight: 700;
+                text-shadow: 0 0.0267rem 0.0267rem rgba(0,0,0,.06);
+                text-align: center
+            }
 
-        .yz-header-banner .tip {
-            margin-top: 0.1067rem;
-            font-size: 0.3733rem;
-            line-height: 0.5867rem;
-            text-align: center;
-            color: rgba(255, 255, 255, 0.8);
-        }
+            .yz-header-banner .tip {
+                margin-top: 0.1067rem;
+                font-size: 0.3733rem;
+                line-height: 0.5867rem;
+                text-align: center;
+                color: rgba(255, 255, 255, 0.8);
+            }
     </style>
 </head>
 
@@ -126,7 +129,7 @@
             <!-- 导航栏组件 -->
             <div class="wap-nav-bar wap-nav-bar-border">
                 <div class="wap-nav-bar__left">
-                    <a href="/wap/">
+                    <a href="https://yz.chsi.com.cn/wap/">
                         <img src="https://t1.chei.com.cn/yz/wap/assets/images/index/logo.png" alt="研招网" class="logo">
                     </a>
                     <!-- 二级标题插槽（当前为空） -->
@@ -137,7 +140,9 @@
                         <!-- 客服图标（隐藏） -->
                         <!---->
                         <!-- 用户中心图标 -->
-                        <span><img src="https://t1.chei.com.cn/common/images/wap-icon/nav-user.svg"></span>
+                        <span onclick="window.location.href='https://account.chsi.com.cn/passport/login?entrytype=yzgr&service=https%3A%2F%2Fyz.chsi.com.cn%2Fj_spring_cas_security_check%3Bjsessionid%3D64A1313F0784C9222D852C7106B84508'">
+                            <img src="https://t1.chei.com.cn/common/images/wap-icon/nav-user.svg">
+                        </span>
                         <!-- 搜索图标 -->
                         <span><img src="https://t2.chei.com.cn/common/images/icon-search-wap.svg"></span>
                         <!-- 菜单图标 -->
@@ -212,6 +217,7 @@
             align-items: center;
             padding: 0 0.427rem;
         }
+
         .wap-nav-bar .logo {
             display: block;
             width: 2.87rem;
@@ -225,13 +231,15 @@
             padding: 0 0.427rem;
             line-height: 1;
         }
+
         .logo-text {
             font-size: 0.373rem;
             color: #65696E;
         }
-        .logo-text a {
-            color: #2B2E33;
-        }
+
+            .logo-text a {
+                color: #2B2E33;
+            }
         /* 标题之间的分隔点 */
         .logo-dot {
             display: block;
@@ -266,6 +274,7 @@
             height: 100%;
             background-color: rgba(0, 0, 0, .7)
         }
+
         .ch-common-nav-popup .van-popup--center {
             top: 50%;
             left: 50%;
@@ -282,7 +291,8 @@
             justify-content: space-between;
             background: #fff;
         }
-        .close-bar::after{
+
+        .close-bar::after {
             position: absolute;
             box-sizing: border-box;
             content: " ";
@@ -294,6 +304,7 @@
             border-bottom: 1px solid #D5D7DB;
             transform: scale(.5);
         }
+
         .close-bar .logo {
             display: block;
             width: 2.87rem;
@@ -305,24 +316,27 @@
             max-width: 750px;
             margin: 0 auto
         }
+
         .ch-common-nav-popup .van-popup {
             top: 0;
             left: auto;
         }
-        .ch-common-nav-popup .van-popup::after {
-            position: absolute;
-            box-sizing: border-box;
-            content: " ";
-            pointer-events: none;
-            top: -50%;
-            right: -50%;
-            bottom: -50%;
-            left: -50%;
-            border: 0 solid #E8EAED;
-            transform: scale(.5);
-            border-top-width: 1px;
-            border-color: #D5D7DB;
-        }
+
+            .ch-common-nav-popup .van-popup::after {
+                position: absolute;
+                box-sizing: border-box;
+                content: " ";
+                pointer-events: none;
+                top: -50%;
+                right: -50%;
+                bottom: -50%;
+                left: -50%;
+                border: 0 solid #E8EAED;
+                transform: scale(.5);
+                border-top-width: 1px;
+                border-color: #D5D7DB;
+            }
+
         .ch-common-nav-popup .van-popup--center {
             transform: none
         }
@@ -336,21 +350,22 @@
             align-items: center;
             margin-bottom: 0.32rem;
         }
+
         .yz-top-navlist-title {
             flex: 1;
             display: flex;
             align-items: center;
         }
-        /* 标题左侧蓝色竖条 */
-        .yz-top-navlist-title::before {
-            display: block;
-            content: '';
-            width: 0.08rem;
-            height: 0.4rem;
-            background: #1887E0;
-            border-radius: 0.04rem;
-            margin-right: 0.13rem;
-        }
+            /* 标题左侧蓝色竖条 */
+            .yz-top-navlist-title::before {
+                display: block;
+                content: '';
+                width: 0.08rem;
+                height: 0.4rem;
+                background: #1887E0;
+                border-radius: 0.04rem;
+                margin-right: 0.13rem;
+            }
         /* 二级导航内容区域（三列网格） */
         .yz-top-navlist-content {
             display: flex;
@@ -358,30 +373,32 @@
             flex-wrap: wrap;
             padding-bottom: 0.26rem;
         }
-        .yz-top-navlist-content a {
-            display: block;
-            width: calc( (100% - 0.58rem) / 3 );
-            text-align: center;
-            height: 0.8rem;
-            line-height: 0.8rem;
-            border-radius: 0.11rem;
-            margin-bottom: 0.27rem;
-            margin-right: 0.29rem;
-            font-size: 0.37rem;
-            color: #2B2E33;
-            background: #F7F8FA;
-            text-decoration: none;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-        }
-        .yz-top-navlist-content a:active{
-            background-color: rgba(0, 0, 0, 0.05);
-        }
-        /* 第三列去除右边距 */
-        .yz-top-navlist-content a:nth-child(3n) {
-            margin-right: 0;
-        }
+
+            .yz-top-navlist-content a {
+                display: block;
+                width: calc( (100% - 0.58rem) / 3 );
+                text-align: center;
+                height: 0.8rem;
+                line-height: 0.8rem;
+                border-radius: 0.11rem;
+                margin-bottom: 0.27rem;
+                margin-right: 0.29rem;
+                font-size: 0.37rem;
+                color: #2B2E33;
+                background: #F7F8FA;
+                text-decoration: none;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+
+                .yz-top-navlist-content a:active {
+                    background-color: rgba(0, 0, 0, 0.05);
+                }
+                /* 第三列去除右边距 */
+                .yz-top-navlist-content a:nth-child(3n) {
+                    margin-right: 0;
+                }
         /* 带“更多”箭头的链接样式 */
         a.yz-top-navlist-link {
             display: flex;
@@ -391,11 +408,12 @@
             color: #93989E;
             line-height: 0.44rem;
         }
-        a.yz-top-navlist-link:active{
-            background-color: rgba(0, 0, 0, 0.05);
-        }
+
+            a.yz-top-navlist-link:active {
+                background-color: rgba(0, 0, 0, 0.05);
+            }
         /* 菜单列表内边距 */
-        .yz-row-list{
+        .yz-row-list {
             padding: 0.35rem 0.43rem;
         }
         /* 导航搜索图标组 */
@@ -403,13 +421,15 @@
             display: flex;
             align-items: center;
         }
-        .nav-search span + span {
-            margin-left: 0.32rem;
-        }
-        .nav-search img {
-            display: block;
-            width: .64rem;
-        }
+
+            .nav-search span + span {
+                margin-left: 0.32rem;
+            }
+
+            .nav-search img {
+                display: block;
+                width: .64rem;
+            }
         /* 搜索遮罩白色背景 */
         .ch-van-overlay-search {
             background: #fff;
@@ -422,6 +442,7 @@
             background: #F7F8FA;
             padding: 0 0.427rem 0 0.24rem;
         }
+
         .top-nav-search-button-wap {
             outline: none;
             background: none;
@@ -468,7 +489,7 @@
                         </slot>
                     </span>
                     <!-- 用户图标 -->
-                    <span v-if="showUser" @click="location.assign(userUrl)">
+                    <span v-if="showUser" @click="location.assign('https://account.chsi.com.cn/passport/login?entrytype=yzgr&service=https%3A%2F%2Fyz.chsi.com.cn%2Fj_spring_cas_security_check%3Bjsessionid%3D64A1313F0784C9222D852C7106B84508')">
                         <slot name="user-icon">
                             <img src="https://t1.chei.com.cn/common/images/wap-icon/nav-user.svg">
                         </slot>
