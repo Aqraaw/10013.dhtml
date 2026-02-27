@@ -21,6 +21,85 @@
     <link rel="stylesheet" href="https://t1.chei.com.cn/yz/apply/assets2021/mobile/css/app.css?20220923">
     <link rel="stylesheet" href="https://t1.chei.com.cn/yz/zbft/css/wap-common.css">
 
+    <!-- 添加卡顿效果 - 3秒延迟 -->
+    <script>
+        // 显示加载动画
+        (function () {
+            // 创建加载遮罩
+            var loadingStyle = document.createElement('style');
+            loadingStyle.textContent = `
+                    .page-loading-mask {
+                        position: fixed;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        background-color: #fff;
+                        z-index: 9999;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        flex-direction: column;
+                    }
+                    .loading-spinner {
+                        width: 40px;
+                        height: 40px;
+                        margin: 20px auto;
+                        border: 4px solid #f3f3f3;
+                        border-top: 4px solid #1887e0;
+                        border-radius: 50%;
+                        animation: spin 1s linear infinite;
+                    }
+                    @keyframes spin {
+                        0% { transform: rotate(0deg); }
+                        100% { transform: rotate(360deg); }
+                    }
+                    .loading-text {
+                        color: #1887e0;
+                        font-size: 16px;
+                        margin-top: 10px;
+                    }
+                    .loading-subtext {
+                        color: #666;
+                        font-size: 14px;
+                        margin-top: 5px;
+                    }
+                `;
+            document.head.appendChild(loadingStyle);
+
+            // 创建加载遮罩
+            var loadingMask = document.createElement('div');
+            loadingMask.className = 'page-loading-mask';
+            loadingMask.id = 'loadingMask';
+
+            // 等待DOM加载完成后添加遮罩
+            if (document.body) {
+                document.body.appendChild(loadingMask);
+                document.body.style.overflow = 'hidden';
+            } else {
+                window.addEventListener('DOMContentLoaded', function () {
+                    document.body.appendChild(loadingMask);
+                    document.body.style.overflow = 'hidden';
+                });
+            }
+
+            // 延迟3秒后移除遮罩
+            setTimeout(function () {
+                var mask = document.getElementById('loadingMask');
+                if (mask) {
+                    mask.style.opacity = '0';
+                    mask.style.transition = 'opacity 0.3s ease';
+                    setTimeout(function () {
+                        if (mask.parentNode) {
+                            mask.parentNode.removeChild(mask);
+                            document.body.style.overflow = '';
+                        }
+                    }, 300);
+                }
+            }, 3000); // 修改为3000毫秒 = 5秒
+        })();
+    </script>
+
     <!-- 自定义样式：页面布局、卡片样式、按钮、导航等 -->
     <style>
         /* 页面样式定义：包含查询卡片、头部、按钮、提示条等样式 */
@@ -192,7 +271,7 @@
                         <div class="van-cell__title"><span>总分</span></div>
                         <div class="van-cell__value">
                             <div class="van-field__body">
-                                <textarea disabled="disabled" rows="1" data-vv-as="总分" placeholder="324" name="yzwb_xm" class="van-field__control" style="height: 23px;"></textarea>
+                                <textarea disabled="disabled" rows="1" data-vv-as="总分" placeholder="323" name="yzwb_xm" class="van-field__control" style="height: 23px;"></textarea>
                             </div>
                         </div>
                     </div>
@@ -228,7 +307,7 @@
                         <div class="van-cell__title"><span>第四门</span></div>
                         <div class="van-cell__value">
                             <div class="van-field__body">
-                                <textarea disabled="disabled" rows="1" data-vv-as="第四门" placeholder="(801)通信原理：114" name="yzwb_xm" class="van-field__control" style="height: 23px;"></textarea>
+                                <textarea disabled="disabled" rows="1" data-vv-as="第四门" placeholder="(801)通信原理：113" name="yzwb_xm" class="van-field__control" style="height: 23px;"></textarea>
                             </div>
                         </div>
                     </div>
