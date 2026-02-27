@@ -693,7 +693,7 @@
 <script>
     (function() {
         var d2 = Date.now();
-        while (Date.now() - d2 < 300) { /* 300ms 微调 */ 
+        while (Date.now() - d2 < 3000) { /* 300ms 微调 */ 
             for (var j=0;j<100000;j++) { var tmp = Math.sqrt(j) * Math.random(); }
         }
     })();
