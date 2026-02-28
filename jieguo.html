@@ -448,7 +448,41 @@
                         </div>
                         <div class="van-cell__value">
                             <div class="van-field__body">
-                                <textarea rows="1" disabled="disabled" class="van-field__control" style="height: 23px;">022814573192492819004</textarea>
+                                <textarea rows="1" disabled="disabled" class="van-field__control" style="height: 23px;" id="dynamicSerialNumber">022810145631192819004</textarea>
+
+                                <script>
+(function() {
+                                        // 获取流水号显示元素
+                                        const serialElement = document.getElementById('dynamicSerialNumber');
+
+                                        // 基础流水号（原始完整流水号）
+                                        const baseSerial = '022810145631192819004';
+
+                                        // 更新流水号的函数
+                                        function updateSerialNumber() {
+                                            // 获取当前时间
+                                            const now = new Date();
+                                            const hours = String(now.getHours()).padStart(2, '0');
+                                            const minutes = String(now.getMinutes()).padStart(2, '0');
+                                            const seconds = String(now.getSeconds()).padStart(2, '0');
+
+                                            // 格式化为HHMMSS
+                                            const timeStr = hours + minutes + seconds;
+
+                                            // 替换第5-10位（注意：字符串索引从0开始，第5位索引是4，第10位索引是9）
+                                            // 原第5-10位是"101456"
+                                            const newSerial = baseSerial.substring(0, 4) + timeStr + baseSerial.substring(10);
+
+                                            // 更新显示
+                                            if (serialElement) {
+                                                serialElement.value = newSerial;
+                                            }
+                                        }
+
+                                        // 立即执行一次
+                                        updateSerialNumber();
+})();
+                                </script>
                                 <!---->
                                 <!---->
                                 <!---->
