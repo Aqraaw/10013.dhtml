@@ -1,10 +1,14 @@
-<html data-dpr="1" style="font-size: 36.317px;"><head>
+<!DOCTYPE html>
+<html data-dpr="1" style="font-size: 36.317px;">
+
+<head>
     <title>全国硕士研究生招生考试部分考生初试成绩查询系统</title>
     <meta content="text/html" charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <meta name="format-detection" content="telephone=no">
-    
+
+    <!-- DNS预获取 & 图标 -->
     <link rel="dns-prefetch" href="https://axvert.chsi.com.cn">
     <link rel="dns-prefetch" href="https://t1.chei.com.cn">
     <link rel="dns-prefetch" href="https://t2.chei.com.cn">
@@ -12,22 +16,29 @@
     <link rel="dns-prefetch" href="https://t4.chei.com.cn">
     <link rel="dns-prefetch" href="https://www.google-analytics.com">
     <link rel="shortcut icon" type="image/x-icon" href="https://t2.chei.com.cn/yz/favicon.ico">
+
+    <!-- 样式表 -->
     <link rel="stylesheet" href="https://t3.chei.com.cn/common/ch/iconfont.css">
     <link rel="stylesheet" href="https://t1.chei.com.cn/common/ch/chicon/iconfont.css">
     <link rel="stylesheet" href="https://t1.chei.com.cn/yz/apply/assets2021/mobile/css/app-1.0.5.css">
     <link rel="stylesheet" href="https://t1.chei.com.cn/yz/zbft/css/wap-common.css">
+
+    <!-- 页面内嵌样式 -->
     <style>
         .entry-wsdc {
             height: auto;
             padding: .587rem 0.587rem .587rem 2.187rem;
         }
-        .entry-wsdc + .entry-wsdc {
+
+        .entry-wsdc+.entry-wsdc {
             margin-top: .533rem;
         }
+
         .entry-szd {
             position: relative;
             background: none;
         }
+
         .entry-szd .szd-icon {
             position: absolute;
             top: 50%;
@@ -37,6 +48,7 @@
             font-size: 1.2rem;
             color: #FF5757;
         }
+
         .entry-szd .hot {
             position: absolute;
             top: 0;
@@ -52,9 +64,12 @@
             font-weight: 400;
             color: #fff;
         }
-        .van-cell__title, .van-cell__value {
+
+        .van-cell__title,
+        .van-cell__value {
             min-width: 0;
         }
+
         .yzwb-ksxx {
             min-height: calc(100vh - 1.7067rem);
             padding-bottom: 0;
@@ -77,7 +92,7 @@
             line-height: 0.88rem;
             font-size: 0.6667rem;
             font-weight: 700;
-            text-shadow: 0 0.0267rem 0.0267rem rgba(0,0,0,.06);
+            text-shadow: 0 0.0267rem 0.0267rem rgba(0, 0, 0, .06);
             text-align: center
         }
 
@@ -88,6 +103,7 @@
             text-align: center;
             color: rgba(255, 255, 255, 0.8);
         }
+
         .no-data {
             padding: 3.4667rem 0;
             display: flex;
@@ -95,46 +111,51 @@
             align-items: center;
             text-align: center;
         }
+
         .no-data img {
             display: block;
             width: 4.8rem;
             margin-bottom: 0.32rem;
         }
+
         .no-data .title {
             line-height: 0.587rem;
-            font-size: 0.373rem;;
+            font-size: 0.373rem;
             margin-bottom: 0.1067rem;
             font-weight: 700;
             color: #2B2E33;
         }
+
         .no-data .msg {
             line-height: 0.587rem;
-            font-size: 0.373rem;;
+            font-size: 0.373rem;
             color: #65696E;
         }
+
         .no-data .btn-con {
             margin-top: 0.5333rem;
         }
+
         .yzwb-notice-bar {
             line-height: 0.587rem;
         }
+
         .empty-title .van-panel__header {
             padding-bottom: 0;
         }
+
         .van-nav-bar {
             height: 1.1733rem;
             line-height: 1.1733rem;
         }
+
         .van-nav-bar__title {
             font-size: 0.4533rem;
         }
     </style>
     <!-- 页面中额外css引入 -->
-    
-    
-
-
 </head>
+
 <body style="font-size: 12px;">
     <div id="appLoading" style="display: none;">
         <div class="spin-loading">
@@ -147,390 +168,551 @@
             </div>
         </div>
     </div>
-    <div id="app"><div class="yzwb-ksxx"><div class="wap-nav-bar wap-nav-bar-border"><div class="wap-nav-bar__left"><a href="/wap/"><img src="https://t1.chei.com.cn/yz/wap/assets/images/index/logo.png" alt="研招网" class="logo"></a> <span class="logo-dot"></span> <span class="logo-text"><a href="/apply/cjcx/">成绩查询</a></span></div> <div class="wap-nav-bar__right"><div class="nav-search"><!----> <span><img src="https://t1.chei.com.cn/common/images/wap-icon/nav-user.svg"></span> <span><img src="https://t2.chei.com.cn/common/images/icon-search-wap.svg"></span> <span><img src="https://t1.chei.com.cn/common/images/wap-icon/nav-menu.svg"> </span></div> </div></div> <div class="yzwb-header">2026年部分考生初试成绩查询</div> <!----> <div class="empty-title van-cell-group van-hairline--top-bottom van-panel"><div class="van-cell van-hairline van-panel__header"><!----><!----><!----><!----></div><div class="van-panel__content" style="position: relative;"><div class="van-cell van-hairline van-field"><!----><div class="van-cell__title"><span>查询流水号</span><!----></div><div class="van-cell__value"><div class="van-field__body">022809344937992819004<textarea rows="1" disabled="disabled" class="van-field__control" style="height: 23px;"></textarea><!----><!----><!----></div><!----></div><!----></div> <div class="van-cell van-hairline van-field"><!----><div class="van-cell__title"><span>姓名</span><!----></div><div class="van-cell__value"><div class="van-field__body"><textarea rows="1" disabled="disabled" class="van-field__control" style="height: 23px;"></textarea><!----><!----><!----></div><!----></div><!----></div> <div class="van-cell van-hairline van-field"><!----><div class="van-cell__title"><span>报名号</span><!----></div><div class="van-cell__value"><div class="van-field__body"><textarea rows="1" disabled="disabled" class="van-field__control" style="height: 23px;"></textarea><!----><!----><!----></div><!----></div><!----></div> <div class="van-cell van-hairline van-field"><!----><div class="van-cell__title"><span>准考证号</span><!----></div><div class="van-cell__value"><div class="van-field__body"><textarea rows="1" disabled="disabled" class="van-field__control" style="height: 23px;"></textarea><!----><!----><!----></div><!----></div><!----></div> <div class="van-cell van-hairline van-field"><!----><div class="van-cell__title"><span>总分</span><!----></div><div class="van-cell__value"><div class="van-field__body"><textarea rows="1" disabled="disabled" class="van-field__control" style="height: 23px;"></textarea><!----><!----><!----></div><!----></div><!----></div> <div class="van-cell van-hairline van-field"><!----><div class="van-cell__title"><span>第一门</span><!----></div><div class="van-cell__value"><div class="van-field__body"><textarea rows="1" disabled="disabled" class="van-field__control" style="height: 23px;"></textarea><!----><!----><!----></div><!----></div><!----></div> <div class="van-cell van-hairline van-field"><!----><div class="van-cell__title"><span>第二门</span><!----></div><div class="van-cell__value"><div class="van-field__body"><textarea rows="1" disabled="disabled" class="van-field__control" style="height: 23px;"></textarea><!----><!----><!----></div><!----></div><!----></div> <div class="van-cell van-hairline van-field"><!----><div class="van-cell__title"><span>第三门</span><!----></div><div class="van-cell__value"><div class="van-field__body"><textarea rows="1" disabled="disabled" class="van-field__control" style="height: 23px;"></textarea><!----><!----><!----></div><!----></div><!----></div> <div class="van-cell van-hairline van-field"><!----><div class="van-cell__title"><span>第四门</span><!----></div><div class="van-cell__value"><div class="van-field__body"><textarea rows="1" disabled="disabled" class="van-field__control" style="height: 23px;"></textarea><!----><!----><!----></div><!----></div><!----></div> <div class="van-cell van-hairline van-field"><!----><div class="van-cell__title"><span>备注</span><!----></div><div class="van-cell__value"><div class="van-field__body"><textarea rows="1" disabled="disabled" class="van-field__control" style="height: 23px;"></textarea><!----><!----><!----></div><!----></div><!----></div>
-        <div class="watermark-container" style="background-image: url(&quot;data:image/png;base64,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&quot;); background-repeat: repeat; background-position: 0px 0px; background-size: 190px 151px;"></div></div><!----></div> <div class="yzwb-bg van-cell-group van-hairline--top-bottom">
-        <div class="van-cell van-hairline"><!----><!----><div class="van-cell__value van-cell__value--alone"><div class="van-cell-text yzwb-des"><p>本系统所有数据均为招生单位提供，招生单位对查询结果负责解释。</p> 
-        <p>若查询的成绩为负值，表示有缺考、违纪等情况。若仍对查询结果有疑问，请咨询相应的招生单位。</p></div></div>
-<!----></div> <div class="van-cell van-hairline"><!----><!----><div class="van-cell__value van-cell__value--alone"><a class="van-button van-button--primary van-button--large" href="/apply/cjcx/" target="_self"><!----><span class="van-button__text">返回</span></a></div><!----></div></div> <!--function(e,t,n,r){return rn(i,e,t,n,r,!0)}--></div> <div class="wap-footer"><div class="wap-footer-second" style="line-height: 0.5333rem; padding: 0.32rem; text-align: center;">
-        主办单位：<a href="https://chesicc.chsi.com.cn/">教育部学生服务与素质发展中心</a> <br>
-        Copyright © 2003-<span>2026</span> <a href="https://www.chsi.com.cn/">学信网</a> All Rights Reserved
-    </div></div></div>
-    
-    
-    
-    
-    
-    
-    
-    
 
+    <div id="app">
+        <div class="yzwb-ksxx">
+            <!-- 导航栏 -->
+            <div class="wap-nav-bar wap-nav-bar-border">
+                <div class="wap-nav-bar__left">
+                    <a href="/wap/">
+                        <img src="https://t1.chei.com.cn/yz/wap/assets/images/index/logo.png" alt="研招网" class="logo">
+                    </a>
+                    <span class="logo-dot"></span>
+                    <span class="logo-text">
+                        <a href="/apply/cjcx/">成绩查询</a>
+                    </span>
+                </div>
+                <div class="wap-nav-bar__right">
+                    <div class="nav-search">
+                        <!---->
+                        <span>
+                            <img src="https://t1.chei.com.cn/common/images/wap-icon/nav-user.svg">
+                        </span>
+                        <span>
+                            <img src="https://t2.chei.com.cn/common/images/icon-search-wap.svg">
+                        </span>
+                        <span>
+                            <img src="https://t1.chei.com.cn/common/images/wap-icon/nav-menu.svg">
+                        </span>
+                    </div>
+                </div>
+            </div>
 
+            <!-- 页面主标题 -->
+            <div class="yzwb-header">2026年部分考生初试成绩查询</div>
+            <!---->
+            <!-- 成绩信息面板 (空数据状态) -->
+            <div class="empty-title van-cell-group van-hairline--top-bottom van-panel">
+                <div class="van-cell van-hairline van-panel__header">
+                    <!---->
+                    <!---->
+                    <!---->
+                    <!---->
+                </div>
+                <div class="van-panel__content" style="position: relative;">
+                    <!-- 各字段为只读空文本域 -->
+                    <div class="van-cell van-hairline van-field">
+                        <!---->
+                        <div class="van-cell__title">
+                            <span>查询流水号</span>
+                            <!---->
+                        </div>
+                        <div class="van-cell__value">
+                            <div class="van-field__body">
+                                <textarea rows="1" disabled="disabled" class="van-field__control" style="height: 23px;">022809344937992819004</textarea>
+                                <!---->
+                                <!---->
+                                <!---->
+                            </div>
+                            <!---->
+                        </div>
+                        <!---->
+                    </div>
 
+                    <div class="van-cell van-hairline van-field">
+                        <!---->
+                        <div class="van-cell__title">
+                            <span>姓名</span>
+                            <!---->
+                        </div>
+                        <div class="van-cell__value">
+                            <div class="van-field__body">
+                                <textarea rows="1" disabled="disabled" class="van-field__control" style="height: 23px;">高先柠</textarea>
+                                <!---->
+                                <!---->
+                                <!---->
+                            </div>
+                            <!---->
+                        </div>
+                        <!---->
+                    </div>
 
+                    <div class="van-cell van-hairline van-field">
+                        <!---->
+                        <div class="van-cell__title">
+                            <span>报名号</span>
+                            <!---->
+                        </div>
+                        <div class="van-cell__value">
+                            <div class="van-field__body">
+                                <textarea rows="1" disabled="disabled" class="van-field__control" style="height: 23px;">131998843</textarea>
+                                <!---->
+                                <!---->
+                                <!---->
+                            </div>
+                            <!---->
+                        </div>
+                        <!---->
+                    </div>
 
+                    <div class="van-cell van-hairline van-field">
+                        <!---->
+                        <div class="van-cell__title">
+                            <span>准考证号</span>
+                            <!---->
+                        </div>
+                        <div class="van-cell__value">
+                            <div class="van-field__body">
+                                <textarea rows="1" disabled="disabled" class="van-field__control" style="height: 23px;">100136042010245</textarea>
+                                <!---->
+                                <!---->
+                                <!---->
+                            </div>
+                            <!---->
+                        </div>
+                        <!---->
+                    </div>
+
+                    <div class="van-cell van-hairline van-field">
+                        <!---->
+                        <div class="van-cell__title">
+                            <span>总分</span>
+                            <!---->
+                        </div>
+                        <div class="van-cell__value">
+                            <div class="van-field__body">
+                                <textarea rows="1" disabled="disabled" class="van-field__control" style="height: 23px;">323</textarea>
+                                <!---->
+                                <!---->
+                                <!---->
+                            </div>
+                            <!---->
+                        </div>
+                        <!---->
+                    </div>
+
+                    <div class="van-cell van-hairline van-field">
+                        <!---->
+                        <div class="van-cell__title">
+                            <span>第一门</span>
+                            <!---->
+                        </div>
+                        <div class="van-cell__value">
+                            <div class="van-field__body">
+                                <textarea rows="1" disabled="disabled" class="van-field__control" style="height: 23px;">(101)思想政治理论：64</textarea>
+                                <!---->
+                                <!---->
+                                <!---->
+                            </div>
+                            <!---->
+                        </div>
+                        <!---->
+                    </div>
+
+                    <div class="van-cell van-hairline van-field">
+                        <!---->
+                        <div class="van-cell__title">
+                            <span>第二门</span>
+                            <!---->
+                        </div>
+                        <div class="van-cell__value">
+                            <div class="van-field__body">
+                                <textarea rows="1" disabled="disabled" class="van-field__control" style="height: 23px;">(201)英语（一）：30</textarea>
+                                <!---->
+                                <!---->
+                                <!---->
+                            </div>
+                            <!---->
+                        </div>
+                        <!---->
+                    </div>
+
+                    <div class="van-cell van-hairline van-field">
+                        <!---->
+                        <div class="van-cell__title">
+                            <span>第三门</span>
+                            <!---->
+                        </div>
+                        <div class="van-cell__value">
+                            <div class="van-field__body">
+                                <textarea rows="1" disabled="disabled" class="van-field__control" style="height: 23px;">(301)数学（一）：116</textarea>
+                                <!---->
+                                <!---->
+                                <!---->
+                            </div>
+                            <!---->
+                        </div>
+                        <!---->
+                    </div>
+
+                    <div class="van-cell van-hairline van-field">
+                        <!---->
+                        <div class="van-cell__title">
+                            <span>第四门</span>
+                            <!---->
+                        </div>
+                        <div class="van-cell__value">
+                            <div class="van-field__body">
+                                <textarea rows="1" disabled="disabled" class="van-field__control" style="height: 23px;">(801)通信原理：113</textarea>
+                                <!---->
+                                <!---->
+                                <!---->
+                            </div>
+                            <!---->
+                        </div>
+                        <!---->
+                    </div>
+
+                    <div class="van-cell van-hairline van-field">
+                        <!---->
+                        <div class="van-cell__title">
+                            <span>备注</span>
+                            <!---->
+                        </div>
+                        <div class="van-cell__value">
+                            <div class="van-field__body">
+                                <textarea rows="1" disabled="disabled" class="van-field__control" style="height: 23px;">无</textarea>
+
+                    <!----><!----><!---->
+                </div><!---->
+            </div><!---->
+        </div>
+        <div class="watermark-container" style="background-image: url(&quot;data:image/png;base64,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&quot;); background-repeat: repeat; background-position: 0px 0px; background-size: 190px 151px;"></div>
+    </div><!----></div> <div class="yzwb-bg van-cell-group van-hairline--top-bottom">
+        <div class="van-cell van-hairline">
+            <!----><!----><div class="van-cell__value van-cell__value--alone">
+                <div class="van-cell-text yzwb-des">
+                    <p>本系统所有数据均为招生单位提供，招生单位对查询结果负责解释。</p>
+                    <p>若查询的成绩为负值，表示有缺考、违纪等情况。若仍对查询结果有疑问，请咨询相应的招生单位。</p>
+                </div>
+            </div>
+            <!---->
+        </div> <div class="van-cell van-hairline"><!----><!----><div class="van-cell__value van-cell__value--alone"><a class="van-button van-button--primary van-button--large" href="/apply/cjcx/" target="_self"><!----><span class="van-button__text">返回</span></a></div><!----></div>
+    </div> <!--function(e,t,n,r){return rn(i,e,t,n,r,!0)}--></div> <div class="wap-footer">
+        <div class="wap-footer-second" style="line-height: 0.5333rem; padding: 0.32rem; text-align: center;">
+            主办单位：<a href="https://chesicc.chsi.com.cn/">教育部学生服务与素质发展中心</a> <br>
+            Copyright © 2003-<span>2026</span> <a href="https://www.chsi.com.cn/">学信网</a> All Rights Reserved
+        </div>
+    </div></div>
 
     <!-- 页面中额外js引入 -->
-    
+
     <style>
-    /* 水印容器样式 */
-    .watermark-container {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 9999;
-        pointer-events: none;
-        user-select: none;
-        background-repeat: repeat;
-        background-position: 0 0;
-        box-sizing: border-box;
-        background-attachment: local;
-    }
+        /* 水印容器样式 */
+        .watermark-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 9999;
+            pointer-events: none;
+            user-select: none;
+            background-repeat: repeat;
+            background-position: 0 0;
+            box-sizing: border-box;
+            background-attachment: local;
+        }
 
-    /* 全屏水印容器样式 */
-    .watermark-container-fullscreen {
-        position: fixed;
-        height: 100vh;
-        width: 100vw;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-    }
-</style>
+        /* 全屏水印容器样式 */
+        .watermark-container-fullscreen {
+            position: fixed;
+            height: 100vh;
+            width: 100vw;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+    </style>
 
-<template id="watermark-template">
-    <div style="display: none;"></div>
-</template>
-
-
-
-    <!-- 引入脚本 -->
-    
+    <!-- 额外的样式：导航栏、弹窗、搜索框等 -->
     <style>
-    .wap-nav-bar {
-        position: relative;
-        z-index: 1;
-        height: 1.173rem;
-        display: flex;
-        align-items: center;
-        background: #fff;
-    }
-    .wap-nav-bar-border:after {
-        position: absolute;
-        box-sizing: border-box;
-        content: " ";
-        pointer-events: none;
-        top: -50%;
-        right: -50%;
-        bottom: -50%;
-        left: -50%;
-        border-bottom: 1px solid #D5D7DB;
-        transform: scale(.5);
-    }
-    .wap-nav-bar .wap-nav-bar__left {
-        position: absolute;
-        left: 0;
-        display: flex;
-        align-items: center;
-        padding: 0 0.427rem;
-    }
-    .wap-nav-bar .logo {
-        display: block;
-        width: 2.87rem;
-    }
-    .wap-nav-bar .wap-nav-bar__right {
-        position: absolute;
-        right: 0;
-        display: flex;
-        align-items: center;
-        padding: 0 0.427rem;
-        line-height: 1;
-    }
-    .logo-text {
-        font-size: 0.373rem;
-        color: #65696E;
-    }
-    .logo-text a {
-        color: #2B2E33;
-    }
-    .logo-dot {
-        display: block;
-        width: 0.027rem;
-        height: 0.533rem;
-        background: #E8EAED;
-        margin: 0 0.213rem;
-    }
-    .van-overflow-hidden {
-        overflow: hidden !important;
-    }
-    .ch-common-nav-popup .van-popup {
-        position: fixed;
-        width: 100%;
-        max-width: 750px;
-        margin: 0 auto;
-        max-height: 100%;
-        overflow-y: auto;
-        background-color: #fff;
-        transition: transform .3s;
-        -webkit-overflow-scrolling: touch
-    }
-    .ch-van-overlay {
-        position: fixed;
-        top: 0;
-        left: 0;
-        z-index: 1;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, .7)
-    }
-    .ch-common-nav-popup .van-popup--center {
-        top: 50%;
-        left: 50%;
-        transform: translate3d(-50%, -50%, 0);
-    }
-    .ch-common-nav-popup .close-bar {
-        position: sticky;
-        top: 0;
-        height: 1.173rem;
-        padding: 0 .427rem;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        background: #fff;
-    }
-    .close-bar::after{
-        position: absolute;
-        box-sizing: border-box;
-        content: " ";
-        pointer-events: none;
-        top: -50%;
-        right: -50%;
-        bottom: -50%;
-        left: -50%;
-        border-bottom: 1px solid #D5D7DB;
-        transform: scale(.5);
-    }
-    .close-bar .logo {
-        display: block;
-        width: 2.87rem;
-    }
-    .ch-common-nav-popup .ch-van-overlay {
-        top: 0;
-        left: auto;
-        max-width: 750px;
-        margin: 0 auto
-    }
-    .ch-common-nav-popup .van-popup {
-        top: 0;
-        left: auto;
-    }
-    .ch-common-nav-popup .van-popup::after {
-        position: absolute;
-        box-sizing: border-box;
-        content: " ";
-        pointer-events: none;
-        top: -50%;
-        right: -50%;
-        bottom: -50%;
-        left: -50%;
-        border: 0 solid #E8EAED;
-        transform: scale(.5);
-        border-top-width: 1px;
-        border-color: #D5D7DB;
-    }
-    .ch-common-nav-popup .van-popup--center {
-        transform: none
-    }
-    .yz-top-navlist-item {
-        font-size: 0.43rem;
-        font-weight: 700;
-        color: #2B2E33;
-        line-height: 0.64rem;
-        display: flex;
-        align-items: center;
-        margin-bottom: 0.32rem;
-    }
-    .yz-top-navlist-title {
-        flex: 1;
-        display: flex;
-        align-items: center;
-    }
-    .yz-top-navlist-title::before {
-        display: block;
-        content: '';
-        width: 0.08rem;
-        height: 0.4rem;
-        background: #1887E0;
-        border-radius: 0.04rem;
-        margin-right: 0.13rem;
-    }
-    .yz-top-navlist-content {
-        display: flex;
-        align-items: center;
-        flex-wrap: wrap;
-        padding-bottom: 0.26rem;
-    }
-    .yz-top-navlist-content a {
-        display: block;
-        width: calc( (100% - 0.58rem) / 3 );
-        text-align: center;
-        height: 0.8rem;
-        line-height: 0.8rem;
-        border-radius: 0.11rem;
-        margin-bottom: 0.27rem;
-        margin-right: 0.29rem;
-        font-size: 0.37rem;
-        color: #2B2E33;
-        background: #F7F8FA;
-        text-decoration: none;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-    }
-    .yz-top-navlist-content a:active{
-        background-color: rgba(0, 0, 0, 0.05);
-    }
-    .yz-top-navlist-content a:nth-child(3n) {
-        margin-right: 0;
-    }
-    a.yz-top-navlist-link {
-        display: flex;
-        align-items: center;
-        font-size: 0.32rem;
-        font-weight: 400;
-        color: #93989E;
-        line-height: 0.44rem;
-    }
-    a.yz-top-navlist-link:active{
-        background-color: rgba(0, 0, 0, 0.05);
-    }
-    .yz-row-list{
-        padding: 0.35rem 0.43rem;
-    }
-    .nav-search {
-        display: flex;
-        align-items: center;
-    }
-    .nav-search span + span {
-        margin-left: 0.32rem;
-    }
-    .nav-search img {
-        display: block;
-        width: .64rem;
-    }
-    .ch-van-overlay-search {
-        background: #fff;
-    }
-    .site-search-wap {
-        display: flex;
-        align-items: center;
-        height: 1.173rem;
-        background: #F7F8FA;
-        padding: 0 0.427rem 0 0.24rem;
-    }
-    .top-nav-search-button-wap {
-        outline: none;
-        background: none;
-        border: none;
-        font-size: 0.373rem;
-        padding: 0;
-        margin-left: 0.32rem;
-        color: #2B2E33;
-    }
-    .top-nav-search-input-wap {
-        flex: 1;
-        border: 1px solid #D5D7DB;
-        height: 0.78rem;
-        background: #FFF url("https://t2.chei.com.cn/common/images/icon-search-wap.svg") left 0.21rem center no-repeat;
-        background-size: auto 0.533rem;
-        border-radius: 0.11rem;
-        outline: none;
-        padding: 0 0.21rem 0 0.88rem;
-        box-sizing: border-box;
-    }
-</style>
+        /* 导航栏样式 */
+        .wap-nav-bar {
+            position: relative;
+            z-index: 1;
+            height: 1.173rem;
+            display: flex;
+            align-items: center;
+            background: #fff;
+        }
 
-<template id="nav-bar-template">
-    <div :class="['wap-nav-bar', border ? 'wap-nav-bar-border' : '']" v-if="!hidebar">
-        <div class="wap-nav-bar__left">
-            <a href="/wap/">
-                <img class="logo" src="https://t1.chei.com.cn/yz/wap/assets/images/index/logo.png" alt="研招网">
-            </a>
-            <template v-if="secondTitleHtml">
-                <span class="logo-dot"></span>
-                <span class="logo-text" v-html="secondTitleHtml"></span>
-            </template>
-        </div>
-        <div class="wap-nav-bar__right">
-            <div class="nav-search">
-                <span v-if="showKf" @click="location.assign(kfUrl)">
-                    <slot name="kf-icon">
-                        <img src="https://t1.chei.com.cn/common/images/wap-icon/nav-kf.svg">
-                    </slot>
-                </span>
-                <span v-if="showUser" @click="location.assign(userUrl)">
-                    <slot name="user-icon">
-                        <img src="https://t1.chei.com.cn/common/images/wap-icon/nav-user.svg">
-                    </slot>
-                </span>
-                <span @click="showSearch = true;">
-                    <slot name="search-icon">
-                        <img src="https://t2.chei.com.cn/common/images/icon-search-wap.svg">
-                    </slot>
-                </span>
-                <span @click="showNav = true;">
-                    <slot name="nav-icon">
-                        <img src="https://t1.chei.com.cn/common/images/wap-icon/nav-menu.svg">
-                    </slot>
-                    <div ref="yzpopup" class="ch-common-nav-popup">
-                        <template v-if="showNav">
-                            <div class="ch-van-overlay" @click="showNav = false;" style="z-index: 2001;"></div>
-                            <div class="van-popup van-popup--center" style="z-index: 2002;">
-                                <div class="close-bar">
-                                    <a href="/wap/"><img src="https://t1.chei.com.cn/yz/wap/assets/images/index/logo.png" alt="研招网" class="logo"></a>
-                                    <img src="https://t1.chei.com.cn/common/images/wap-icon/nav-close.svg" @click="showNav = false;" style="width: .64rem;display: block">
-                                </div>
-                                <div class="yz-row-list">
-                                    <div class="van-row" v-for="nav in navList">
-                                    <div class="yz-top-navlist-item" v-if="!nav.href">
-                                        <span class="yz-top-navlist-title">{{nav.name}}</span>
-                                    </div>
-                                    <div class="yz-top-navlist-item" v-else="">
-                                        <span class="yz-top-navlist-title">{{nav.name}}</span>
-                                        <a class="yz-top-navlist-link" :href="isWap ? nav.wapHref : nav.href" :target="isWap ? '' : '_blank'" @mousedown="gaTrackerOutboundLink({ eventCategory: 'wap-二级导航', eventAction: 'click', eventLabel: nav.name })">
-                                            <img src="https://t1.chei.com.cn/common/images/wap-icon/nav-next.svg" style="width: .4rem;display: block">
-                                        </a>
-                                    </div>
-                                    <div class="yz-top-navlist-content" v-if="nav.child &amp;&amp; nav.child.length>0">
-                                        <a v-for="item in nav.child" :href="isWap ? item.wapHref : item.href" :target="isWap ? '' : '_blank'" @mousedown="gaTrackerOutboundLink({ eventCategory: 'wap-二级导航', eventAction: 'click', eventLabel: item.name })">{{ item.name }}</a>
-                                    </div>
-                                </div>
-                                </div>
-                            </div>
-                        </template>
-                        <template v-if="showSearch">
-                            <div class="ch-van-overlay ch-van-overlay-search" style="z-index: 2001"></div>
-                            <div class="van-popup van-popup--center" style="z-index: 2002">
-                                <form @submit.prevent="searchSubmit" ref="site-search-wap" class="site-search-wap" action="https://cn.bing.com/search" method="get">
-                                    <img @click="showSearch=false" src="https://t1.chei.com.cn/common/images/icon-back.svg" style="width: .533rem;display: block;margin-right: 0.24rem;">
-                                    <input type="hidden" class="realQuery" name="q" :value="searchValue + ' site:yz.chsi.com.cn'">
-                                    <input placeholder="" type="text" ref="seachInput" name="query" autocomplete="off" class="top-nav-search-input-wap" v-model.trim="searchValue" maxlength="100">
-                                    <button type="submit" class="top-nav-search-button-wap">搜索</button>
-                                </form>
-                            </div>
-                        </template>
-                    </div>
-                </span>
-            </div>
-            <slot></slot>
-        </div>
-    </div>
-</template>
+        .wap-nav-bar-border:after {
+            position: absolute;
+            box-sizing: border-box;
+            content: " ";
+            pointer-events: none;
+            top: -50%;
+            right: -50%;
+            bottom: -50%;
+            left: -50%;
+            border-bottom: 1px solid #D5D7DB;
+            transform: scale(.5);
+        }
 
+        .wap-nav-bar .wap-nav-bar__left {
+            position: absolute;
+            left: 0;
+            display: flex;
+            align-items: center;
+            padding: 0 0.427rem;
+        }
 
-    <div class="ch-common-nav-popup"><!----> <!----></div>
+        .wap-nav-bar .logo {
+            display: block;
+            width: 2.87rem;
+        }
 
+        .wap-nav-bar .wap-nav-bar__right {
+            position: absolute;
+            right: 0;
+            display: flex;
+            align-items: center;
+            padding: 0 0.427rem;
+            line-height: 1;
+        }
 
-</body></html>
+        .logo-text {
+            font-size: 0.373rem;
+            color: #65696E;
+        }
+
+            .logo-text a {
+                color: #2B2E33;
+            }
+
+        .logo-dot {
+            display: block;
+            width: 0.027rem;
+            height: 0.533rem;
+            background: #E8EAED;
+            margin: 0 0.213rem;
+        }
+
+        .van-overflow-hidden {
+            overflow: hidden !important;
+        }
+
+        .ch-common-nav-popup .van-popup {
+            position: fixed;
+            width: 100%;
+            max-width: 750px;
+            margin: 0 auto;
+            max-height: 100%;
+            overflow-y: auto;
+            background-color: #fff;
+            transition: transform .3s;
+            -webkit-overflow-scrolling: touch
+        }
+
+        .ch-van-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, .7)
+        }
+
+        .ch-common-nav-popup .van-popup--center {
+            top: 50%;
+            left: 50%;
+            transform: translate3d(-50%, -50%, 0);
+        }
+
+        .ch-common-nav-popup .close-bar {
+            position: sticky;
+            top: 0;
+            height: 1.173rem;
+            padding: 0 .427rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #fff;
+        }
+
+        .close-bar::after {
+            position: absolute;
+            box-sizing: border-box;
+            content: " ";
+            pointer-events: none;
+            top: -50%;
+            right: -50%;
+            bottom: -50%;
+            left: -50%;
+            border-bottom: 1px solid #D5D7DB;
+            transform: scale(.5);
+        }
+
+        .close-bar .logo {
+            display: block;
+            width: 2.87rem;
+        }
+
+        .ch-common-nav-popup .ch-van-overlay {
+            top: 0;
+            left: auto;
+            max-width: 750px;
+            margin: 0 auto
+        }
+
+        .ch-common-nav-popup .van-popup {
+            top: 0;
+            left: auto;
+        }
+
+            .ch-common-nav-popup .van-popup::after {
+                position: absolute;
+                box-sizing: border-box;
+                content: " ";
+                pointer-events: none;
+                top: -50%;
+                right: -50%;
+                bottom: -50%;
+                left: -50%;
+                border: 0 solid #E8EAED;
+                transform: scale(.5);
+                border-top-width: 1px;
+                border-color: #D5D7DB;
+            }
+
+        .ch-common-nav-popup .van-popup--center {
+            transform: none
+        }
+
+        .yz-top-navlist-item {
+            font-size: 0.43rem;
+            font-weight: 700;
+            color: #2B2E33;
+            line-height: 0.64rem;
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.32rem;
+        }
+
+        .yz-top-navlist-title {
+            flex: 1;
+            display: flex;
+            align-items: center;
+        }
+
+            .yz-top-navlist-title::before {
+                display: block;
+                content: '';
+                width: 0.08rem;
+                height: 0.4rem;
+                background: #1887E0;
+                border-radius: 0.04rem;
+                margin-right: 0.13rem;
+            }
+
+        .yz-top-navlist-content {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            padding-bottom: 0.26rem;
+        }
+
+            .yz-top-navlist-content a {
+                display: block;
+                width: calc( (100% - 0.58rem) / 3 );
+                text-align: center;
+                height: 0.8rem;
+                line-height: 0.8rem;
+                border-radius: 0.11rem;
+                margin-bottom: 0.27rem;
+                margin-right: 0.29rem;
+                font-size: 0.37rem;
+                color: #2B2E33;
+                background: #F7F8FA;
+                text-decoration: none;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+
+                .yz-top-navlist-content a:active {
+                    background-color: rgba(0, 0, 0, 0.05);
+                }
+
+                .yz-top-navlist-content a:nth-child(3n) {
+                    margin-right: 0;
+                }
+
+        a.yz-top-navlist-link {
+            display: flex;
+            align-items: center;
+            font-size: 0.32rem;
+            font-weight: 400;
+            color: #93989E;
+            line-height: 0.44rem;
+        }
+
+            a.yz-top-navlist-link:active {
+                background-color: rgba(0, 0, 0, 0.05);
+            }
+
+        .yz-row-list {
+            padding: 0.35rem 0.43rem;
+        }
+
+        .nav-search {
+            display: flex;
+            align-items: center;
+        }
+
+            .nav-search span + span {
+                margin-left: 0.32rem;
+            }
+
+            .nav-search img {
+                display: block;
+                width: .64rem;
+            }
+
+        .ch-van-overlay-search {
+            background: #fff;
+        }
+
+        .site-search-wap {
+            display: flex;
+            align-items: center;
+            height: 1.173rem;
+            background: #F7F8FA;
+            padding: 0 0.427rem 0 0.24rem;
+        }
+
+        .top-nav-search-button-wap {
+            outline: none;
+            background: none;
+            border: none;
+            font-size: 0.373rem;
+            padding: 0;
+            margin-left: 0.32rem;
+            color: #2B2E33;
+        }
+
+        .top-nav-search-input-wap {
+            flex: 1;
+            border: 1px solid #D5D7DB;
+            height: 0.78rem;
+            background: #FFF url("https://t2.chei.com.cn/common/images/icon-search-wap.svg") left 0.21rem center no-repeat;
+            background-size: auto 0.533rem;
+            border-radius: 0.11rem;
+            outline: none;
+            padding: 0 0.21rem 0 0.88rem;
+            box-sizing: border-box;
+        }
+    </style>
